@@ -1,0 +1,445 @@
+[
+  {
+    "id": 1,
+    "title": "Housing Assistance",
+    "category": "Communities and Justice",
+    "date": "2024-07-17",
+    "hours": "9:30 AM - 5:30 PM",
+    "url": "/services/service-1",
+    "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  },
+  {
+    "id": 2,
+    "title": "Community Support",
+    "category": "housing",
+    "date": "2023-07-29",
+    "hours": "Closed",
+    "url": "/services/service-2",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 3,
+    "title": "Family Support",
+    "category": "Education",
+    "date": "2023-03-07",
+    "hours": "8:00 AM - 4:00 PM",
+    "url": "/services/service-3",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 4,
+    "title": "Youth Services",
+    "category": "Health",
+    "date": "2025-10-31",
+    "hours": "By appointment only",
+    "url": "/services/service-4",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 5,
+    "title": "Legal Help",
+    "category": "Health",
+    "date": "2026-08-23",
+    "hours": "Closed",
+    "url": "/services/service-5",
+    "description": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+  },
+  {
+    "id": 6,
+    "title": "Youth Services",
+    "category": "education",
+    "date": "2026-04-21",
+    "hours": "10:00 AM - 6:00 PM",
+    "url": "/services/service-6",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 7,
+    "title": "Community Support & Support",
+    "category": "housing",
+    "date": "2025-05-15",
+    "hours": "7:30 AM - 3:30 PM",
+    "url": "/services/service-7",
+    "description": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+  },
+  {
+    "id": 8,
+    "title": "Community Support",
+    "category": "Health",
+    "date": "2024-11-20",
+    "hours": "8:30 AM - 4:30 PM",
+    "url": "/services/service-8",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 9,
+    "title": "Report an Issue",
+    "category": "communities and justice",
+    "date": "2025-01-05",
+    "hours": "7:30 AM - 3:30 PM",
+    "url": "/services/service-9",
+    "description": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  },
+  {
+    "id": 10,
+    "title": "Education Help",
+    "category": "LEGAL AID",
+    "date": "2023-03-30",
+    "hours": "24 Hours",
+    "url": "/services/service-10",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt."
+  },
+  {
+    "id": 11,
+    "title": "Legal Help (Children's)",
+    "category": "communities and justice",
+    "date": "2025-02-14",
+    "hours": "8:30 AM - 4:30 PM",
+    "url": "/services/service-11",
+    "description": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  },
+  {
+    "id": 12,
+    "title": "Find a Service",
+    "category": "Legal Aid",
+    "date": "2026-07-11",
+    "hours": "By appointment only",
+    "url": "/services/service-12",
+    "description": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+  },
+  {
+    "id": 13,
+    "title": "Family Support \"Priority\"",
+    "category": "Health",
+    "date": "2026-12-13",
+    "hours": "8:30 AM - 4:30 PM",
+    "url": "/services/service-13",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 14,
+    "title": "Youth Services & Support",
+    "category": "LEGAL AID",
+    "date": "2024-08-15",
+    "hours": "8:30 AM - 4:30 PM",
+    "url": "/services/service-14",
+    "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  },
+  {
+    "id": 15,
+    "title": "Housing Assistance",
+    "category": "Education",
+    "date": "2024-07-23",
+    "url": "/services/service-15",
+    "description": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+  },
+  {
+    "id": 16,
+    "title": "Community Support",
+    "category": "health",
+    "date": "2024-12-28",
+    "hours": "9:30 AM - 5:30 PM",
+    "url": "/services/service-16",
+    "description": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+  },
+  {
+    "id": 17,
+    "title": "Housing Assistance - Find, Apply & Review",
+    "date": "2026-07-24",
+    "hours": "9:00 AM - 5:00 PM",
+    "url": "/services/service-17",
+    "description": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  },
+  {
+    "id": 18,
+    "title": "Youth Services",
+    "category": "COMMUNITIES AND JUSTICE",
+    "date": "2025-08-04",
+    "hours": "11:00 AM - 7:00 PM",
+    "url": "/services/service-18",
+    "description": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+  },
+  {
+    "id": 19,
+    "title": "Legal Help",
+    "category": "Health",
+    "date": "2026-11-03",
+    "hours": "7:30 AM - 3:30 PM",
+    "url": "/services/service-19"
+  },
+  {
+    "id": 20,
+    "title": "Youth Services",
+    "category": "Legal Aid",
+    "date": "2023-03-07",
+    "hours": "7:30 AM - 3:30 PM",
+    "url": "/services/service-20",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt."
+  },
+  {
+    "id": 21,
+    "title": "Report an Issue & Support",
+    "category": "HEALTH",
+    "date": "2023-05-16",
+    "hours": "9:30 AM - 5:30 PM",
+    "url": "/services/service-21",
+    "description": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  },
+  {
+    "id": 22,
+    "title": "Health Support (Children's)",
+    "category": "Health",
+    "date": "2026-09-04",
+    "hours": "24 Hours",
+    "url": "/services/service-22",
+    "description": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+  },
+  {
+    "id": 23,
+    "title": "Digital Access Program",
+    "category": "COMMUNITIES AND JUSTICE",
+    "date": "2024-06-26",
+    "hours": "9:00 AM - 5:00 PM",
+    "url": "/services/service-23",
+    "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  },
+  {
+    "id": 24,
+    "title": "Legal Help",
+    "category": "Customer Service",
+    "date": "2024-06-22",
+    "hours": "By appointment only",
+    "url": "/services/service-24",
+    "description": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+  },
+  {
+    "id": 25,
+    "title": "Family Support",
+    "category": "Education",
+    "date": "2025-01-11",
+    "hours": "9:30 AM - 5:30 PM",
+    "url": "",
+    "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  },
+  {
+    "id": 26,
+    "title": "Legal Help \"Priority\"",
+    "category": "education",
+    "date": "2023-07-06",
+    "hours": "8:00 AM - 4:00 PM",
+    "url": "/services/service-26",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 27,
+    "title": "Community Support",
+    "category": "Housing",
+    "date": "2023-11-24",
+    "hours": "11:00 AM - 7:00 PM",
+    "url": "/services/service-27",
+    "description": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  },
+  {
+    "id": 28,
+    "title": "Housing Assistance & Support",
+    "category": "Education",
+    "date": "2025-02-20",
+    "hours": "By appointment only",
+    "url": "/services/service-28",
+    "description": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+  },
+  {
+    "id": 29,
+    "title": "Legal Help",
+    "category": "HEALTH",
+    "date": "2026-02-07",
+    "hours": "8:00 AM - 4:00 PM",
+    "url": "/services/service-29",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 30,
+    "title": "Legal Help",
+    "category": "LEGAL AID",
+    "date": "2024-06-30",
+    "url": "/services/service-30",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt."
+  },
+  {
+    "id": 31,
+    "title": "Housing Assistance",
+    "category": "HEALTH",
+    "date": "2025-06-09",
+    "hours": "9:00 AM - 5:00 PM",
+    "url": "/services/service-31",
+    "description": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+  },
+  {
+    "id": 32,
+    "title": "Find a Service",
+    "category": "housing",
+    "date": "2024-06-23",
+    "hours": "Closed",
+    "url": "/services/service-32",
+    "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  },
+  {
+    "id": 33,
+    "title": "Legal Help (Children's)",
+    "category": "youth services",
+    "date": "2026-13-45",
+    "hours": "10:00 AM - 6:00 PM",
+    "url": "/services/service-33",
+    "description": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  },
+  {
+    "id": 34,
+    "title": "Family Support - Find, Apply & Review",
+    "date": "2023-11-10",
+    "hours": "7:30 AM - 3:30 PM",
+    "url": "/services/service-34",
+    "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  },
+  {
+    "id": 35,
+    "title": "Legal Help & Support",
+    "category": "LEGAL AID",
+    "date": "2025-12-22",
+    "hours": "8:00 AM - 4:00 PM",
+    "url": "/services/service-35",
+    "description": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  },
+  {
+    "id": 36,
+    "title": "Health Support",
+    "category": "education",
+    "date": "2023-02-09",
+    "hours": "8:30 AM - 4:30 PM",
+    "url": "/services/service-36",
+    "description": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+  },
+  {
+    "id": 37,
+    "title": "Find a Service",
+    "category": "Health",
+    "date": "2023-04-29",
+    "hours": "9:30 AM - 5:30 PM",
+    "url": "/services/service-37",
+    "description": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  },
+  {
+    "id": 38,
+    "title": "Housing Assistance",
+    "category": "communities and justice",
+    "date": "2025-09-22",
+    "hours": "8:30 AM - 4:30 PM",
+    "url": "/services/service-38"
+  },
+  {
+    "id": 39,
+    "title": "Community Support \"Priority\"",
+    "category": "COMMUNITIES AND JUSTICE",
+    "date": "2026-09-13",
+    "hours": "24 Hours",
+    "url": "/services/service-39",
+    "description": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  },
+  {
+    "id": 40,
+    "title": "Community Support",
+    "category": "HEALTH",
+    "date": "2025-12-16",
+    "hours": "By appointment only",
+    "url": "/services/service-40",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt."
+  },
+  {
+    "id": 41,
+    "title": "Report an Issue",
+    "category": null,
+    "date": "2026-01-09",
+    "hours": "9:30 AM - 5:30 PM",
+    "url": "/services/service-41",
+    "description": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+  },
+  {
+    "id": 42,
+    "title": "Report an Issue & Support",
+    "category": "Housing",
+    "date": "2026-08-23",
+    "hours": "7:30 AM - 3:30 PM",
+    "url": "/services/service-42",
+    "description": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+  },
+  {
+    "id": 43,
+    "title": "Legal Help",
+    "category": "education",
+    "date": "2023-09-05",
+    "hours": "9:30 AM - 5:30 PM",
+    "url": "/services/service-43",
+    "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  },
+  {
+    "id": 44,
+    "title": "",
+    "category": "health",
+    "date": "2023-02-13",
+    "hours": "By appointment only",
+    "url": "/services/service-44",
+    "description": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  },
+  {
+    "id": 45,
+    "title": "Youth Services",
+    "category": "customer service",
+    "date": "2024-03-27",
+    "url": "/services/service-45",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 46,
+    "title": "Find a Service",
+    "category": "Health",
+    "date": "2023-05-19",
+    "hours": "8:00 AM - 4:00 PM",
+    "url": "/services/service-46",
+    "description": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+  },
+  {
+    "id": 47,
+    "title": "Housing Assistance",
+    "category": "Customer Service",
+    "date": "2024-05-02",
+    "hours": "10:00 AM - 6:00 PM",
+    "url": "/services/service-47",
+    "description": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+  },
+  {
+    "id": 48,
+    "title": "Youth Services",
+    "category": "Customer Service",
+    "date": "2023-09-28",
+    "hours": "By appointment only",
+    "url": "/services/service-48",
+    "description": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  },
+  {
+    "id": 49,
+    "title": "Digital Access Program & Support",
+    "category": "Health",
+    "date": "2025-08-26",
+    "hours": "11:00 AM - 7:00 PM",
+    "url": "/services/service-49",
+    "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  },
+  {
+    "id": 50,
+    "title": "Housing Assistance",
+    "category": "communities and justice",
+    "date": "2026-09-11",
+    "hours": "11:00 AM - 7:00 PM",
+    "url": "/services/service-50",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt."
+  }
+]
