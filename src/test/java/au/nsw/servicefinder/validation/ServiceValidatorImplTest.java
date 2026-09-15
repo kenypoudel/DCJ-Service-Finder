@@ -9,8 +9,7 @@ import au.nsw.servicefinder.model.ServiceRecord;
 
 class ServiceValidatorImplTest {
 
-    private final ServiceValidator validator =
-            new ServiceValidatorImpl();
+    private final ServiceValidator validator = new ServiceValidatorImpl();
 
     @Test
     void shouldRejectServiceWhenIdIsMissing() {
@@ -22,44 +21,39 @@ class ServiceValidatorImplTest {
                 "Monday",
                 "9am - 5pm",
                 "https://example.com",
-                "Test description"
-        );
+                "Test description");
 
         assertFalse(validator.isValid(service));
     }
 
+    @Test
+    void shouldRejectServiceWhenTitleIsMissing() {
 
-@Test
-void shouldRejectServiceWhenTitleIsMissing() {
+        ServiceRecord service = new ServiceRecord(
+                1,
+                null,
+                "Education",
+                "Monday",
+                "9am - 5pm",
+                "https://example.com",
+                "Test description");
 
-    ServiceRecord service = new ServiceRecord(
-            1,
-            null,
-            "Education",
-            "Monday",
-            "9am - 5pm",
-            "https://example.com",
-            "Test description"
-    );
+        assertFalse(validator.isValid(service));
+    }
 
-    assertFalse(validator.isValid(service));
-}
+    @Test
+    void shouldAcceptServiceWhenOptionalDescriptionIsMissing() {
 
-@Test
-void shouldAcceptServiceWhenOptionalDescriptionIsMissing() {
+        ServiceRecord service = new ServiceRecord(
+                1,
+                "Test Service",
+                "Education",
+                "Monday",
+                "9am - 5pm",
+                "https://example.com",
+                null);
 
-    ServiceRecord service = new ServiceRecord(
-            1,
-            "Test Service",
-            "Education",
-            "Monday",
-            "9am - 5pm",
-            "https://example.com",
-            null
-    );
-
-    assertTrue(validator.isValid(service));
-}
-
+        assertTrue(validator.isValid(service));
+    }
 
 }

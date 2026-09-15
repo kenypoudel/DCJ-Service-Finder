@@ -52,8 +52,7 @@ async function loadServices(page = 0) {
 
 
     const data = await response.json();
-    alert("Test" + page);
-alert("Data: " + JSON.stringify(data)); // Debugging line to check the data received from the API
+
 
     /*
      * Render results
@@ -79,63 +78,29 @@ alert("Data: " + JSON.stringify(data)); // Debugging line to check the data rece
   }
 }
 
-async function loadCategories() {
-  const categoryList = document.getElementById('category-list');
 
-  try {
-    const response = await fetch('/api/categories');
-    if (!response.ok) {
-      throw new Error('Failed to load categories');
-    }
+/*
+ * Display service results
+ */
 
-    const categories = await response.json();
-    categoryList.replaceChildren();
+function renderResults(data) {
+  const resultsContainer =
+    document.getElementById('search-results');
 
-    categories.forEach((category, index) => {
-      const input = document.createElement('input');
-      input.className = 'nsw-form__checkbox-input';
-      input.type = 'checkbox';
-      input.name = 'filters-instant-categories';
-      input.value = category;
-      input.id = `category-${index}`;
-      input.addEventListener('change', () => loadServices(0));
+  resultsContainer.innerHTML = '';
 
-      const label = document.createElement('label');
-      label.className = 'nsw-form__checkbox-label';
-      label.htmlFor = input.id;
-      label.textContent = category;
+  updateResultsInfo(data);
 
-      categoryList.append(input, label);
-    });
-  } catch (error) {
-    console.error(error);
-    categoryList.textContent = 'Unable to load categories.';
+  if (data.content.length === 0) {
+    resultsContainer.innerHTML =
+      '<p>No services found.</p>';
+    return;
   }
-}
 
+  data.content.forEach(service => {
 
-    /*
-    * Display service results
-    */
-
-    function renderResults(data) {
-    const resultsContainer =
-        document.getElementById('search-results');
-
-    resultsContainer.innerHTML = '';
-
-    updateResultsInfo(data);
-
-    if (data.content.length === 0) {
-        resultsContainer.innerHTML =
-        '<p>No services found.</p>';
-        return;
-    }
-
-    data.content.forEach(service => {
-
-        const result =
-        document.createElement('div');
+    const result =
+      document.createElement('div');
 
     result.className =
       'nsw-list-item';
@@ -190,15 +155,19 @@ async function loadCategories() {
     const link =
       document.createElement('a');
 
-    if (service.url && service.url.trim()) {
-      link.href = service.url;
-      link.target = '_blank';
-      link.rel = 'noopener noreferrer';
-      link.textContent = service.title ?? '';
-      title.appendChild(link);
-    } else {
-      title.textContent = service.title ?? '';
-    }
+    link.href =
+      service.url ?? '#';
+
+    link.target =
+      '_blank';
+
+    link.rel =
+      'noopener noreferrer';
+
+    link.textContent =
+      service.title ?? '';
+
+    title.appendChild(link);
 
     content.appendChild(title);
 
@@ -524,4 +493,4 @@ document
 /*
  * Initial page load
  */
-loadCategories().then(() => loadServices(0));
+loadServices(0);
