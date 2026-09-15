@@ -24,9 +24,8 @@ public final class ServiceRepositoryImpl
      * Jackson needs the generic type information to convert
      * the JSON array into a List<ServiceRecord>.
      */
-    private static final TypeReference<List<ServiceRecord>> SERVICE_LIST =
-            new TypeReference<>() {
-            };
+    private static final TypeReference<List<ServiceRecord>> SERVICE_LIST = new TypeReference<>() {
+    };
 
     /*
      * ObjectMapper is responsible for converting JSON data
@@ -73,8 +72,7 @@ public final class ServiceRepositoryImpl
             if (Files.exists(dataPath)) {
 
                 return read(
-                        Files.newInputStream(dataPath)
-                );
+                        Files.newInputStream(dataPath));
             }
 
             /*
@@ -82,8 +80,7 @@ public final class ServiceRepositoryImpl
              * so fail with a clear error message.
              */
             throw new IllegalStateException(
-                    "Service data was not found at " + dataPath
-            );
+                    "Service data was not found at " + dataPath);
 
         } catch (IOException exception) {
 
@@ -93,8 +90,7 @@ public final class ServiceRepositoryImpl
              */
             throw new IllegalStateException(
                     "Unable to load service data",
-                    exception
-            );
+                    exception);
         }
     }
 
@@ -112,12 +108,14 @@ public final class ServiceRepositoryImpl
 
             return objectMapper.readValue(
                     inputStream,
-                    SERVICE_LIST
-            );
+                    SERVICE_LIST);
         }
     }
 }
 
-/**It means:
-
-Open data.json → read the JSON → convert every JSON object into a ServiceRecord → return them as a List. */
+/**
+ * It means:
+ * 
+ * Open data.json → read the JSON → convert every JSON object into a
+ * ServiceRecord → return them as a List.
+ */

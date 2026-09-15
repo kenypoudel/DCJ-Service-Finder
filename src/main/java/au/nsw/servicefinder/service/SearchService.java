@@ -8,6 +8,5 @@ public interface SearchService {
             String keyword,
             String category,
             int page,
-            int size
-    );
+            int size);
 }

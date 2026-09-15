@@ -63,12 +63,10 @@
 
         <div class="nsw-form__input-group">
 
-          <label for="search-input">Search services</label>
           <input
             class="nsw-form__input"
             type="text"
             id="search-input"
-            name="keyword"
             placeholder="Search services">
 
           <button
@@ -109,12 +107,82 @@
 
               <div class="nsw-filters__item-content">
 
-                <fieldset class="nsw-form__fieldset">
-                  <legend class="nsw-form__legend">Categories</legend>
-                  <div id="category-list" aria-live="polite">
-                    Loading categories...
-                  </div>
-                </fieldset>
+                <div class="nsw-form__fieldset">
+
+                  <span class="nsw-form__legend">
+                    Categories
+                  </span>
+
+                  <input
+                    class="nsw-form__checkbox-input"
+                    type="checkbox"
+                    name="filters-instant-categories"
+                    value="Customer Service"
+                    id="filters-instant-categories-0-1">
+
+                  <label
+                    class="nsw-form__checkbox-label"
+                    for="filters-instant-categories-0-1">
+                    Customer Service
+                  </label>
+
+
+                  <input
+                    class="nsw-form__checkbox-input"
+                    type="checkbox"
+                    name="filters-instant-categories"
+                    value="Communities and Justice"
+                    id="filters-instant-categories-1-1">
+
+                  <label
+                    class="nsw-form__checkbox-label"
+                    for="filters-instant-categories-1-1">
+                    Communities and Justice
+                  </label>
+
+
+                  <input
+                    class="nsw-form__checkbox-input"
+                    type="checkbox"
+                    name="filters-instant-categories"
+                    value="Education"
+                    id="filters-instant-categories-2-1">
+
+                  <label
+                    class="nsw-form__checkbox-label"
+                    for="filters-instant-categories-2-1">
+                    Education
+                  </label>
+
+
+                  <input
+                    class="nsw-form__checkbox-input"
+                    type="checkbox"
+                    name="filters-instant-categories"
+                    value="Health"
+                    id="filters-instant-categories-3-1">
+
+                  <label
+                    class="nsw-form__checkbox-label"
+                    for="filters-instant-categories-3-1">
+                    Health
+                  </label>
+
+
+                  <input
+                    class="nsw-form__checkbox-input"
+                    type="checkbox"
+                    name="filters-instant-categories"
+                    value="Planning"
+                    id="filters-instant-categories-4-1">
+
+                  <label
+                    class="nsw-form__checkbox-label"
+                    for="filters-instant-categories-4-1">
+                    Planning
+                  </label>
+
+                </div>
 
               </div>
 
@@ -145,8 +213,7 @@
 
         <div
           class="nsw-results-bar__info"
-          id="results-info"
-          aria-live="polite">
+          id="results-info">
           Loading results...
         </div>
 
@@ -156,8 +223,7 @@
       <!-- Dynamic service results -->
       <div
         class="nsw-search-results"
-        id="search-results"
-        aria-live="polite">
+        id="search-results">
       </div>
 
 
