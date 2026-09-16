@@ -20,32 +20,18 @@ import au.nsw.servicefinder.model.ServiceRecord;
 public final class ServiceRepositoryImpl
         implements ServiceRepository {
 
-    /*
-     * Jackson needs the generic type information to convert
-     * the JSON array into a List<ServiceRecord>.
-     */
     private static final TypeReference<List<ServiceRecord>> SERVICE_LIST = new TypeReference<>() {
     };
 
-    /*
-     * ObjectMapper is responsible for converting JSON data
-     * into Java objects.
-     */
     private final ObjectMapper objectMapper;
 
-    /*
-     * Path to the supplied service data file.
-     *
-     * Keeping this as a dependency allows the data location
-     * to be changed without modifying the repository logic.
-     */
     private final Path dataPath;
 
     /**
      * Creates the repository with the required dependencies.
      *
      * @param objectMapper Jackson JSON object mapper
-     * @param dataPath path to the service data file
+     * @param dataPath     path to the service data file
      */
     public ServiceRepositoryImpl(
             ObjectMapper objectMapper,
@@ -65,29 +51,17 @@ public final class ServiceRepositoryImpl
 
         try {
 
-            /*
-             * First check whether the data file exists
-             * at the configured path.
-             */
             if (Files.exists(dataPath)) {
 
                 return read(
                         Files.newInputStream(dataPath));
             }
 
-            /*
-             * The expected data file could not be found,
-             * so fail with a clear error message.
-             */
             throw new IllegalStateException(
                     "Service data was not found at " + dataPath);
 
         } catch (IOException exception) {
 
-            /*
-             * Convert the low-level file error into a clear
-             * application-level exception.
-             */
             throw new IllegalStateException(
                     "Unable to load service data",
                     exception);
@@ -100,6 +74,7 @@ public final class ServiceRepositoryImpl
      *
      * The try-with-resources statement automatically closes
      * the input stream after reading.
+     * ServiceRecord objects are created using the Jackson JSON library.
      */
     private List<ServiceRecord> read(
             InputStream inputStream) throws IOException {
@@ -112,10 +87,3 @@ public final class ServiceRepositoryImpl
         }
     }
 }
-
-/**
- * It means:
- * 
- * Open data.json → read the JSON → convert every JSON object into a
- * ServiceRecord → return them as a List.
- */

@@ -98,7 +98,6 @@ public class ServiceFinderServer {
                          * Read query parameters.
                          */
                         if (query != null) {
-                                // System.out.println("QueryKeny: " + query);
 
                                 for (String parameter : query.split("&")) { // Split the query string into individual
                                                                             // parameters using '&' as the delimiter
@@ -149,10 +148,10 @@ public class ServiceFinderServer {
                                 }
                         }
 
-                        System.out.println("Keyword: " + keyword);
-                        System.out.println("Category: " + category);
-                        System.out.println("Page: " + page);
-                        System.out.println("Size: " + size);
+                        // System.out.println("Keyword: " + keyword);
+                        // System.out.println("Category: " + category);
+                        // System.out.println("Page: " + page);
+                        // System.out.println("Size: " + size);
 
                         if (page < 0 || size < 1 || size > 10) {
 
@@ -418,6 +417,17 @@ public class ServiceFinderServer {
 
         }
 
+        /**
+         * Sends a 400 Bad Request response with the specified error message.
+         *
+         * @param exchange     the HttpExchange object
+         * @param errorMessage the error message to send in the response body
+         * @throws java.io.IOException if an I/O error occurs
+         *                             Example usage:
+         *                             sendBadRequest(exchange, "Invalid request
+         *                             parameters.");
+         * 
+         */
         private static void sendBadRequest(
                         com.sun.net.httpserver.HttpExchange exchange,
                         String errorMessage) throws java.io.IOException {
@@ -440,6 +450,20 @@ public class ServiceFinderServer {
                 exchange.close();
         }
 
+        /**
+         * Converts a category string into a normalized format.
+         *
+         * Example:
+         *
+         * "health and human services"
+         *
+         * becomes:
+         *
+         * "Health And Human Services"
+         *
+         * @param category the category string to format
+         * @return the formatted category string
+         */
         private static String formatCategory(String category) {
                 String[] words = category
                                 .toLowerCase(java.util.Locale.ROOT)
