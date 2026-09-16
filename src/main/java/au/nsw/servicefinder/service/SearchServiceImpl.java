@@ -46,6 +46,8 @@ public class SearchServiceImpl implements SearchService {
         /**
          * Searches service records using keyword and category filters
          * and returns one page of results.
+         * 
+         * Also calculate the total number of pages.
          */
         @Override
         public PageResult<ServiceRecord> search(
@@ -59,18 +61,9 @@ public class SearchServiceImpl implements SearchService {
                                         "Page must be 0 or greater and size must be between 1 and 10.");
                 }
 
-                /*
-                 * Load all service records from the repository.
-                 */
+  
                 List<ServiceRecord> services = repository.findAll();
 
-                /*
-                 * Filter the records.
-                 *
-                 * 1. Remove invalid records
-                 * 2. Apply keyword search
-                 * 3. Apply category filtering
-                 */
                 List<ServiceRecord> filteredServices = services.stream()
                                 .filter(Objects::nonNull)
                                 .filter(validator::isValid)
@@ -84,30 +77,19 @@ public class SearchServiceImpl implements SearchService {
                                                                 //                 "Matched service: " + service.title()))
                                 .collect(Collectors.toList());
 
-                /*
-                 * Calculate the total number of matching records.
-                 */
+               
                 int totalResults = filteredServices.size();
 
-                /*
-                 * Calculate the total number of pages.
-                 */
+
                 int totalPages = totalResults == 0
                                 ? 0
                                 : (int) Math.ceil(
                                                 (double) totalResults / size);
 
-                /*
-                 * Calculate where the requested page starts.
-                 *
-                 * Page numbering starts from 0.
-                 */
-                int start = page * size;
+             
+                int start = page * size; // start position of the requested page
 
-                /*
-                 * If the requested page is beyond the
-                 * available results, return an empty page.
-                 */
+             
                 if (start >= totalResults) {
 
                         return new PageResult<>(
@@ -118,25 +100,17 @@ public class SearchServiceImpl implements SearchService {
                                         totalPages);
                 }
 
-                /*
-                 * Calculate the end position without
-                 * going beyond the available results.
-                 */
+             
                 int end = Math.min(
                                 start + size,
-                                totalResults);
+                                totalResults); // end position of the requested page
 
-                /*
-                 * Extract only the records for
-                 * the requested page.
-                 */
+             
                 List<ServiceRecord> pageResults = filteredServices.subList(
                                 start,
                                 end);
 
-                /*
-                 * Return the paginated search result.
-                 */
+                
                 return new PageResult<>(
                                 pageResults,
                                 page,
@@ -155,23 +129,15 @@ public class SearchServiceImpl implements SearchService {
                         ServiceRecord service,
                         String keyword) {
 
-                /*
-                 * Normalize the search keyword.
-                 */
+              
                 String searchKeyword = normalize(keyword);
 
-                /*
-                 * An empty keyword means all services
-                 * should match.
-                 */
+                
                 if (searchKeyword.isEmpty()) {
                         return true;
                 }
 
-                /*
-                 * Normalize title and description before
-                 * performing a case-insensitive search.
-                 */
+              
                 String title = normalize(service.title());
 
                 String description = normalize(service.description());
@@ -194,43 +160,22 @@ public class SearchServiceImpl implements SearchService {
                         ServiceRecord service,
                         String category) {
 
-                /*
-                 * No category filter means all categories
-                 * should be included.
-                 */
+                
                 if (category == null
                                 || category.isBlank()) {
 
                         return true;
                 }
 
-                /*
-                 * A service without a category cannot match
-                 * a selected category.
-                 */
+             
                 if (service.category() == null) {
 
                         return false;
                 }
 
-                /*
-                 * Split the selected categories.
-                 *
-                 * Example:
-                 *
-                 * Education,Health
-                 *
-                 * becomes:
-                 *
-                 * Education
-                 * Health
-                 */
+               
                 String[] categories = category.split(",");
 
-                /*
-                 * Check whether the service category matches
-                 * any selected category.
-                 */
                 for (String selectedCategory : categories) {
 
                         if (normalize(service.category())
