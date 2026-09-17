@@ -7,6 +7,10 @@ import org.junit.jupiter.api.Test;
 
 import au.nsw.servicefinder.model.ServiceRecord;
 
+/**
+ * Unit tests for the
+ * ServiceValidatorImplTest
+ */
 class ServiceValidatorImplTest {
 
     private final ServiceValidator validator = new ServiceValidatorImpl();

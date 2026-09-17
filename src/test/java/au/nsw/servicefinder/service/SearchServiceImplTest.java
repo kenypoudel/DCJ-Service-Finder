@@ -1,17 +1,21 @@
 package au.nsw.servicefinder.service;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
-
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import org.junit.jupiter.api.Test;
 
 import au.nsw.servicefinder.model.ServiceRecord;
 import au.nsw.servicefinder.validation.ServiceValidatorImpl;
 
+/**
+ * Unit tests for the SearchServiceImpl class.
+ */
 class SearchServiceImplTest {
-
+        /**
+         * Sample service records for testing.
+         */
         private final List<ServiceRecord> services = List.of(
                         service(1, "Housing Assistance", "Housing", "Help with housing", "/housing"),
                         service(2, "Health Support", "HEALTH", "Health information", "/health"),
@@ -28,7 +32,7 @@ class SearchServiceImplTest {
                 PageResult<ServiceRecord> result = searchService.search(
                                 "HEALTH", "", 0, 10);
 
-                assertEquals(List.of(2), ids(result));
+                assertEquals(List.of(2), ids(result)); // When I search for HEALTH, I expect service 2 to be returned.
         }
 
         @Test
@@ -36,7 +40,7 @@ class SearchServiceImplTest {
                 PageResult<ServiceRecord> result = searchService.search(
                                 "", "housing", 0, 10);
 
-                assertEquals(List.of(1, 4), ids(result));
+                assertEquals(List.of(1, 4), ids(result)); // When I filter by category "housing", I expect services 1 and 4 to be returned.
         }
 
         @Test
@@ -44,9 +48,9 @@ class SearchServiceImplTest {
                 PageResult<ServiceRecord> result = searchService.search(
                                 "", "", 0, 3);
 
-                assertEquals(3, result.content().size());
+                assertEquals(3, result.content().size()); 
                 assertEquals(5, result.totalResults());
-                assertEquals(2, result.totalPages());
+                assertEquals(2, result.totalPages()); // When I request page 0 with size 3, I expect to get 3 results, a total of 5 results, and a total of 2 pages.
         }
 
         @Test

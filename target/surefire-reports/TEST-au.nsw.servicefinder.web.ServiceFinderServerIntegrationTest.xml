@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="au.nsw.servicefinder.validation.ServiceValidatorImplTest" time="0.021" tests="3" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="au.nsw.servicefinder.web.ServiceFinderServerIntegrationTest" time="0.992" tests="4" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -59,7 +59,18 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="shouldRejectServiceWhenTitleIsMissing" classname="au.nsw.servicefinder.validation.ServiceValidatorImplTest" time="0.004"/>
-  <testcase name="shouldAcceptServiceWhenOptionalDescriptionIsMissing" classname="au.nsw.servicefinder.validation.ServiceValidatorImplTest" time="0.005"/>
-  <testcase name="shouldRejectServiceWhenIdIsMissing" classname="au.nsw.servicefinder.validation.ServiceValidatorImplTest" time="0.003"/>
+  <testcase name="servicesEndpointReturnsPaginatedResults" classname="au.nsw.servicefinder.web.ServiceFinderServerIntegrationTest" time="0.333">
+    <system-out><![CDATA[Service Finder running at http://localhost:8080
+Query: page=0&size=3
+]]></system-out>
+  </testcase>
+  <testcase name="servicesEndpointReturnsSuccessfulResponse" classname="au.nsw.servicefinder.web.ServiceFinderServerIntegrationTest" time="0.022">
+    <system-out><![CDATA[Query: page=0&size=10
+]]></system-out>
+  </testcase>
+  <testcase name="servicesEndpointRejectsInvalidPageSize" classname="au.nsw.servicefinder.web.ServiceFinderServerIntegrationTest" time="0.003">
+    <system-out><![CDATA[Query: page=0&size=11
+]]></system-out>
+  </testcase>
+  <testcase name="categoriesEndpointReturnsSuccessfulResponse" classname="au.nsw.servicefinder.web.ServiceFinderServerIntegrationTest" time="0.033"/>
 </testsuite>

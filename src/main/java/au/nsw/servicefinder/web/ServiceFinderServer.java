@@ -22,6 +22,10 @@ import au.nsw.servicefinder.validation.ServiceValidatorImpl;
 public class ServiceFinderServer {
 
         public static void start() throws Exception {
+                start(8080);
+        }
+
+        public static HttpServer start(int port) throws Exception {
 
                 ServiceRepository repository = new ServiceRepositoryImpl(
                                 new ObjectMapper(),
@@ -34,7 +38,7 @@ public class ServiceFinderServer {
                                 validator);
 
                 HttpServer server = HttpServer.create(
-                                new InetSocketAddress(8080),
+                                new InetSocketAddress(port),
                                 0);
 
                 System.out.println(
@@ -87,7 +91,7 @@ public class ServiceFinderServer {
 
                         String query = exchange.getRequestURI().getQuery();
 
-                        System.out.println("Query: " + query);
+                        // System.out.println("Query: " + query);
 
                         String keyword = "";
                         String category = "";
@@ -414,6 +418,7 @@ public class ServiceFinderServer {
                  * ============================================================
                  */
                 server.start();
+                return server;
 
         }
 
