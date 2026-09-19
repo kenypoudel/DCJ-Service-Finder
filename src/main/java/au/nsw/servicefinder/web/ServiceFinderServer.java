@@ -19,12 +19,31 @@ import au.nsw.servicefinder.service.SearchServiceImpl;
 import au.nsw.servicefinder.validation.ServiceValidator;
 import au.nsw.servicefinder.validation.ServiceValidatorImpl;
 
+/**
+ * Service Finder Server.
+ *
+ * This class starts the HTTP server and handles incoming requests.
+ * It provides endpoints for searching services, retrieving categories,
+ * and serving static files (index.html, style.css, script.js).
+ */
 public class ServiceFinderServer {
 
+        /**
+         * Starts the Service Finder server on the default port (8080).
+         *
+         * @throws Exception if an error occurs while starting the server
+         */
         public static void start() throws Exception {
                 start(8080);
         }
 
+        /**
+         * Starts the Service Finder server on the specified port.
+         *
+         * @param port the port number to start the server on
+         * @return the started HttpServer instance
+         * @throws Exception if an error occurs while starting the server
+         */
         public static HttpServer start(int port) throws Exception {
 
                 ServiceRepository repository = new ServiceRepositoryImpl(
@@ -91,8 +110,6 @@ public class ServiceFinderServer {
 
                         String query = exchange.getRequestURI().getQuery();
 
-                        // System.out.println("Query: " + query);
-
                         String keyword = "";
                         String category = "";
                         int page = 0;
@@ -151,11 +168,6 @@ public class ServiceFinderServer {
 
                                 }
                         }
-
-                        // System.out.println("Keyword: " + keyword);
-                        // System.out.println("Category: " + category);
-                        // System.out.println("Page: " + page);
-                        // System.out.println("Size: " + size);
 
                         if (page < 0 || size < 1 || size > 10) {
 

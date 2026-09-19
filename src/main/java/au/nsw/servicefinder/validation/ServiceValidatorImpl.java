@@ -1,7 +1,9 @@
 package au.nsw.servicefinder.validation;
 
 import au.nsw.servicefinder.model.ServiceRecord;
-
+/**
+ * Implementation of the ServiceValidator interface.
+ */
 public final class ServiceValidatorImpl implements ServiceValidator {
     @Override
     public boolean isValid(ServiceRecord service) {

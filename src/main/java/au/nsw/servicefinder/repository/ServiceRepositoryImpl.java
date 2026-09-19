@@ -16,6 +16,9 @@ import au.nsw.servicefinder.model.ServiceRecord;
  *
  * Responsible only for loading service records from the
  * supplied JSON data file.
+ * Returns a list of ServiceRecord objects to the caller.
+ * Conversion from JSON to ServiceRecord objects is handled
+ * by the Jackson JSON library.
  */
 public final class ServiceRepositoryImpl
         implements ServiceRepository {
@@ -24,7 +27,6 @@ public final class ServiceRepositoryImpl
     };
 
     private final ObjectMapper objectMapper;
-
     private final Path dataPath;
 
     /**

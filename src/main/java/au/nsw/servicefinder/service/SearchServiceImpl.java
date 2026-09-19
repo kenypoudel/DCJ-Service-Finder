@@ -11,16 +11,8 @@ import au.nsw.servicefinder.validation.ServiceValidator;
 
 public class SearchServiceImpl implements SearchService {
 
-        /*
-         * Repository is responsible for loading
-         * all service records from the JSON dataset.
-         */
         private final ServiceRepository repository;
 
-        /*
-         * Validator is responsible for checking
-         * whether a service record is valid.
-         */
         private final ServiceValidator validator;
 
         /**
@@ -61,7 +53,6 @@ public class SearchServiceImpl implements SearchService {
                                         "Page must be 0 or greater and size must be between 1 and 10.");
                 }
 
-  
                 List<ServiceRecord> services = repository.findAll();
 
                 List<ServiceRecord> filteredServices = services.stream()
@@ -73,23 +64,17 @@ public class SearchServiceImpl implements SearchService {
                                 .filter(service -> matchesCategory(
                                                 service,
                                                 category))
-                                                                // .peek(service -> System.out.println(
-                                                                //                 "Matched service: " + service.title()))
                                 .collect(Collectors.toList());
 
-               
                 int totalResults = filteredServices.size();
-
 
                 int totalPages = totalResults == 0
                                 ? 0
                                 : (int) Math.ceil(
                                                 (double) totalResults / size);
 
-             
                 int start = page * size; // start position of the requested page
 
-             
                 if (start >= totalResults) {
 
                         return new PageResult<>(
@@ -100,17 +85,14 @@ public class SearchServiceImpl implements SearchService {
                                         totalPages);
                 }
 
-             
                 int end = Math.min(
                                 start + size,
                                 totalResults); // end position of the requested page
 
-             
                 List<ServiceRecord> pageResults = filteredServices.subList(
                                 start,
                                 end);
 
-                
                 return new PageResult<>(
                                 pageResults,
                                 page,
@@ -124,20 +106,21 @@ public class SearchServiceImpl implements SearchService {
          *
          * The keyword is searched in both the service
          * title and description.
+         * 
+         * The search is case-insensitive. 
+         * returns true if the keyword is found in either the title or description.
+         * returns false if the keyword is not found in either the title or description.
          */
         private boolean matchesKeyword(
                         ServiceRecord service,
                         String keyword) {
 
-              
                 String searchKeyword = normalize(keyword);
 
-                
                 if (searchKeyword.isEmpty()) {
                         return true;
                 }
 
-              
                 String title = normalize(service.title());
 
                 String description = normalize(service.description());
@@ -160,20 +143,17 @@ public class SearchServiceImpl implements SearchService {
                         ServiceRecord service,
                         String category) {
 
-                
                 if (category == null
                                 || category.isBlank()) {
 
                         return true;
                 }
 
-             
                 if (service.category() == null) {
 
                         return false;
                 }
 
-               
                 String[] categories = category.split(",");
 
                 for (String selectedCategory : categories) {
@@ -195,7 +175,8 @@ public class SearchServiceImpl implements SearchService {
          *
          * Null values become an empty string.
          * Leading and trailing spaces are removed.
-         * Locale.ROOT provides consistent behaviour.
+         * Locale.ROOT provides consistent behaviour. 
+         * Example: "  Hello World  " becomes "hello world".
          */
         private String normalize(
                         String value) {
