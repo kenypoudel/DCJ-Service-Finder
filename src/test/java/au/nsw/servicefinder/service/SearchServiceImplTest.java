@@ -59,7 +59,7 @@ class SearchServiceImplTest {
                                 "", "", 2, 3);
 
                 assertEquals(List.of(), result.content());
-                assertEquals(5, result.totalResults());
+                assertEquals(5, result.totalResults()); // When I request page 2 with size 3, I expect to get an empty list of results, but the total results should still be 5.
         }
 
         @Test
@@ -67,7 +67,7 @@ class SearchServiceImplTest {
                 assertThrows(IllegalArgumentException.class,
                                 () -> searchService.search("", "", -1, 10));
                 assertThrows(IllegalArgumentException.class,
-                                () -> searchService.search("", "", 0, 11));
+                                () -> searchService.search("", "", 0, 11)); // When I request a negative page or a size greater than 10, I expect an IllegalArgumentException to be thrown.
         }
 
         private static List<Integer> ids(PageResult<ServiceRecord> result) {
